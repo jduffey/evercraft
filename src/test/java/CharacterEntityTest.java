@@ -17,4 +17,11 @@ public class CharacterEntityTest {
         Assert.assertEquals(AlignmentType.GOOD, character.getAlignment());
     }
 
+    @Test
+    public void goodNeutralAndEvilAlignmentsExist(){
+        Assert.assertNotNull(AlignmentType.GOOD);
+        Assert.assertNotNull(AlignmentType.NEUTRAL);
+        Assert.assertNotNull(AlignmentType.EVIL);
+    }
+
 }
