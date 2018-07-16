@@ -7,6 +7,6 @@ public class CharacterEntity {
     }
 
     public String getName() {
-        return "";
+        return name;
     }
 }
