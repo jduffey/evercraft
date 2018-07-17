@@ -6,6 +6,7 @@ public class CharacterEntity {
     private int hitPoints = 5;
     private int mostRecentRoll;
     private boolean mostRecentAttackSuccess;
+    private LifeStatus lifeStatus = LifeStatus.ALIVE;
 
     public void setName(String name) {
         this.name = name;
@@ -52,6 +53,13 @@ public class CharacterEntity {
             target.setHitPoints(-1);
         }
         target.setHitPoints(-1);
+        target.setLifeStatus();
+    }
+
+    private void setLifeStatus() {
+        if (hitPoints <= 0) {
+            lifeStatus = LifeStatus.DEAD;
+        }
     }
 
     private void setHitPoints(int i) {
@@ -64,8 +72,6 @@ public class CharacterEntity {
     }
 
     public LifeStatus getLifeStatus() {
-        if (hitPoints > 0) {
-            return LifeStatus.ALIVE;
-        } else return LifeStatus.DEAD;
+        return lifeStatus;
     }
 }
