@@ -30,4 +30,10 @@ public class CharacterEntityTest {
         Assert.assertEquals(10, character.getArmorRating());
     }
 
+    @Test
+    public void characterShoulrHaveADefaultHitPointsOf5() {
+        CharacterEntity character = new CharacterEntity();
+        Assert.assertEquals(5, character.getHitPoints());
+    }
+
 }
