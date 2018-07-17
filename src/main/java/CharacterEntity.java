@@ -74,4 +74,28 @@ public class CharacterEntity {
     public LifeStatus getLifeStatus() {
         return lifeStatus;
     }
+
+    public int getStrength() {
+        return 10;
+    }
+
+    public int getDexterity() {
+        return 10;
+    }
+
+    public int getConstitution() {
+        return 10;
+    }
+
+    public int getWisdom() {
+        return 10;
+    }
+
+    public int getIntelligence() {
+        return 10;
+    }
+
+    public int getCharisma() {
+        return 10;
+    }
 }

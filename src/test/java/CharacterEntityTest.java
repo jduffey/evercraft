@@ -90,16 +90,27 @@ public class CharacterEntityTest {
     }
 
     @Test
-    public void fiveHitPointsOfDamageMakeACharacterDead(){
+    public void fiveHitPointsOfDamageMakeACharacterDead() {
         CharacterEntity goodGuy = new CharacterEntity();
         CharacterEntity badGuy = new CharacterEntity();
         Assert.assertEquals(5, badGuy.getHitPoints());
-        goodGuy.attack(badGuy,20);
-        goodGuy.attack(badGuy,20);
+        goodGuy.attack(badGuy, 20);
+        goodGuy.attack(badGuy, 20);
         Assert.assertEquals(1, badGuy.getHitPoints());
-        goodGuy.attack(badGuy,19);
+        goodGuy.attack(badGuy, 19);
         Assert.assertEquals(0, badGuy.getHitPoints());
         Assert.assertEquals(LifeStatus.DEAD, badGuy.getLifeStatus());
+    }
+
+    @Test
+    public void allCharactersHaveStrengthDexterityConstitutionWisdomIntelligenceCharismaDefaultValues() {
+        CharacterEntity character = new CharacterEntity();
+        Assert.assertEquals(10, character.getStrength());
+        Assert.assertEquals(10, character.getDexterity());
+        Assert.assertEquals(10, character.getConstitution());
+        Assert.assertEquals(10, character.getWisdom());
+        Assert.assertEquals(10, character.getIntelligence());
+        Assert.assertEquals(10, character.getCharisma());
     }
 
 }
