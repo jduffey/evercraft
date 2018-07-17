@@ -42,7 +42,17 @@ public class CharacterEntity {
         } else
             mostRecentAttackSuccess = true;
 
+        dealDamage(target, mostRecentAttackSuccess);
+
         return mostRecentAttackSuccess;
+    }
+
+    private void dealDamage(CharacterEntity target, boolean mostRecentAttackSuccess) {
+        target.setHitPoints(-1);
+    }
+
+    private void setHitPoints(int i) {
+        hitPoints = hitPoints + i;
     }
 
     private int roll(int setOutcome) {

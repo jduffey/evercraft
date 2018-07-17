@@ -63,4 +63,14 @@ public class CharacterEntityTest {
         Assert.assertEquals(true, goodGuy.isMostRecentAttackSuccess());
     }
 
+    @Test
+    public void successfulAttackTakesOneHitPointFromOpponent(){
+        CharacterEntity goodGuy = new CharacterEntity();
+        CharacterEntity badGuy = new CharacterEntity();
+        Assert.assertEquals(5, badGuy.getHitPoints());
+        Assert.assertEquals(10, badGuy.getArmorRating());
+        goodGuy.attack(badGuy,11);
+        Assert.assertEquals(4, badGuy.getHitPoints());
+    }
+
 }
