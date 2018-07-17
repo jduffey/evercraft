@@ -2,6 +2,7 @@ public class CharacterEntity {
 
     private String name;
     private AlignmentType alignmentType;
+    private int armorRating = 10;
 
     public void setName(String name) {
         this.name = name;
@@ -20,6 +21,6 @@ public class CharacterEntity {
     }
 
     public int getArmorRating() {
-        return 10;
+        return armorRating;
     }
 }
