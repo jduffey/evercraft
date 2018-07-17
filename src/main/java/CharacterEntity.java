@@ -48,6 +48,9 @@ public class CharacterEntity {
     }
 
     private void dealDamage(CharacterEntity target) {
+        if (mostRecentRoll == 20) {
+            target.setHitPoints(-1);
+        }
         target.setHitPoints(-1);
     }
 

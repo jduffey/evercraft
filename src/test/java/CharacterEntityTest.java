@@ -73,4 +73,14 @@ public class CharacterEntityTest {
         Assert.assertEquals(4, badGuy.getHitPoints());
     }
 
+    @Test
+    public void anAttackRollOf20DealsTwoPointsOfDamage(){
+        CharacterEntity goodGuy = new CharacterEntity();
+        CharacterEntity badGuy = new CharacterEntity();
+        Assert.assertEquals(5, badGuy.getHitPoints());
+        Assert.assertEquals(10, badGuy.getArmorRating());
+        goodGuy.attack(badGuy,20);
+        Assert.assertEquals(3, badGuy.getHitPoints());
+    }
+
 }
