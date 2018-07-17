@@ -4,14 +4,14 @@ import org.junit.Test;
 public class CharacterEntityTest {
 
     @Test
-    public void shouldSetAndGetName() {
+    public void characterShouldSetAndGetName() {
         CharacterEntity character = new CharacterEntity();
         character.setName("Riley");
         Assert.assertEquals("Riley", character.getName());
     }
 
     @Test
-    public void shouldSetAndGetAlignment() {
+    public void characterShouldSetAndGetAlignment() {
         CharacterEntity character = new CharacterEntity();
         character.setAlignment(AlignmentType.GOOD);
         Assert.assertEquals(AlignmentType.GOOD, character.getAlignment());
@@ -31,7 +31,7 @@ public class CharacterEntityTest {
     }
 
     @Test
-    public void characterShoulrHaveADefaultHitPointsOf5() {
+    public void characterShouldHaveDefaultHitPointsOf5() {
         CharacterEntity character = new CharacterEntity();
         Assert.assertEquals(5, character.getHitPoints());
     }
@@ -84,7 +84,7 @@ public class CharacterEntityTest {
     }
 
     @Test
-    public void aCharacterIsCreatedAlive() {
+    public void aCharacterIsCreatedWithStatusAlive() {
         CharacterEntity character = new CharacterEntity();
         Assert.assertEquals(LifeStatus.ALIVE, character.getLifeStatus());
     }
