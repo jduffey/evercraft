@@ -42,12 +42,12 @@ public class CharacterEntity {
         } else
             mostRecentAttackSuccess = true;
 
-        dealDamage(target, mostRecentAttackSuccess);
+        dealDamage(target);
 
         return mostRecentAttackSuccess;
     }
 
-    private void dealDamage(CharacterEntity target, boolean mostRecentAttackSuccess) {
+    private void dealDamage(CharacterEntity target) {
         target.setHitPoints(-1);
     }
 
