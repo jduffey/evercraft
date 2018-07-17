@@ -4,6 +4,8 @@ public class CharacterEntity {
     private AlignmentType alignmentType;
     private int armorRating = 10;
     private int hitPoints = 5;
+    private int mostRecentRoll;
+    private boolean mostRecentAttackSuccess;
 
     public void setName(String name) {
         this.name = name;
@@ -27,5 +29,24 @@ public class CharacterEntity {
 
     public int getHitPoints() {
         return hitPoints;
+    }
+
+    public boolean isMostRecentAttackSuccess() {
+        return mostRecentAttackSuccess;
+    }
+
+    public boolean attack(CharacterEntity target, int setDieOutcome) {
+
+        if (roll(setDieOutcome) < target.armorRating) {
+            mostRecentAttackSuccess = false;
+        } else
+            mostRecentAttackSuccess = true;
+
+        return mostRecentAttackSuccess;
+    }
+
+    private int roll(int setOutcome) {
+        mostRecentRoll = setOutcome;
+        return mostRecentRoll;
     }
 }

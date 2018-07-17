@@ -36,4 +36,31 @@ public class CharacterEntityTest {
         Assert.assertEquals(5, character.getHitPoints());
     }
 
+    @Test
+    public void characterAttackFailsWhenRollIsLessThanOpponentArmorRating() {
+        CharacterEntity goodGuy = new CharacterEntity();
+        CharacterEntity badGuy = new CharacterEntity();
+        Assert.assertEquals(10, badGuy.getArmorRating());
+        goodGuy.attack(badGuy, 9);
+        Assert.assertEquals(false, goodGuy.isMostRecentAttackSuccess());
+    }
+
+    @Test
+    public void characterAttackSucceedsWhenRollIsGreaterThanOpponentArmorRating() {
+        CharacterEntity goodGuy = new CharacterEntity();
+        CharacterEntity badGuy = new CharacterEntity();
+        Assert.assertEquals(10, badGuy.getArmorRating());
+        goodGuy.attack(badGuy, 11);
+        Assert.assertEquals(true, goodGuy.isMostRecentAttackSuccess());
+    }
+
+    @Test
+    public void characterAttackSucceedsWhenRollIsEqualToOpponentArmorRating() {
+        CharacterEntity goodGuy = new CharacterEntity();
+        CharacterEntity badGuy = new CharacterEntity();
+        Assert.assertEquals(10, badGuy.getArmorRating());
+        goodGuy.attack(badGuy, 10);
+        Assert.assertEquals(true, goodGuy.isMostRecentAttackSuccess());
+    }
+
 }
