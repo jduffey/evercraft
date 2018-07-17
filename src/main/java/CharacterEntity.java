@@ -62,4 +62,8 @@ public class CharacterEntity {
         mostRecentRoll = setOutcome;
         return mostRecentRoll;
     }
+
+    public LifeStatus getLifeStatus() {
+        return LifeStatus.ALIVE;
+    }
 }

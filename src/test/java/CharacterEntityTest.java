@@ -64,23 +64,29 @@ public class CharacterEntityTest {
     }
 
     @Test
-    public void successfulAttackTakesOneHitPointFromOpponent(){
+    public void successfulAttackTakesOneHitPointFromOpponent() {
         CharacterEntity goodGuy = new CharacterEntity();
         CharacterEntity badGuy = new CharacterEntity();
         Assert.assertEquals(5, badGuy.getHitPoints());
         Assert.assertEquals(10, badGuy.getArmorRating());
-        goodGuy.attack(badGuy,11);
+        goodGuy.attack(badGuy, 11);
         Assert.assertEquals(4, badGuy.getHitPoints());
     }
 
     @Test
-    public void anAttackRollOf20DealsTwoPointsOfDamage(){
+    public void anAttackRollOf20DealsTwoPointsOfDamage() {
         CharacterEntity goodGuy = new CharacterEntity();
         CharacterEntity badGuy = new CharacterEntity();
         Assert.assertEquals(5, badGuy.getHitPoints());
         Assert.assertEquals(10, badGuy.getArmorRating());
-        goodGuy.attack(badGuy,20);
+        goodGuy.attack(badGuy, 20);
         Assert.assertEquals(3, badGuy.getHitPoints());
+    }
+
+    @Test
+    public void aCharacterIsCreatedAlive() {
+        CharacterEntity character = new CharacterEntity();
+        Assert.assertEquals(LifeStatus.ALIVE, character.getLifeStatus());
     }
 
 }
