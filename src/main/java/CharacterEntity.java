@@ -64,6 +64,8 @@ public class CharacterEntity {
     }
 
     public LifeStatus getLifeStatus() {
-        return LifeStatus.ALIVE;
+        if (hitPoints > 0) {
+            return LifeStatus.ALIVE;
+        } else return LifeStatus.DEAD;
     }
 }

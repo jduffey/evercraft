@@ -89,4 +89,17 @@ public class CharacterEntityTest {
         Assert.assertEquals(LifeStatus.ALIVE, character.getLifeStatus());
     }
 
+    @Test
+    public void fiveHitPointsOfDamageMakeACharacterDead(){
+        CharacterEntity goodGuy = new CharacterEntity();
+        CharacterEntity badGuy = new CharacterEntity();
+        Assert.assertEquals(5, badGuy.getHitPoints());
+        goodGuy.attack(badGuy,20);
+        goodGuy.attack(badGuy,20);
+        Assert.assertEquals(1, badGuy.getHitPoints());
+        goodGuy.attack(badGuy,19);
+        Assert.assertEquals(0, badGuy.getHitPoints());
+        Assert.assertEquals(LifeStatus.DEAD, badGuy.getLifeStatus());
+    }
+
 }
