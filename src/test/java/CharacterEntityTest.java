@@ -18,10 +18,16 @@ public class CharacterEntityTest {
     }
 
     @Test
-    public void goodNeutralAndEvilAlignmentsExist(){
+    public void goodNeutralAndEvilAlignmentsExist() {
         Assert.assertNotNull(AlignmentType.GOOD);
         Assert.assertNotNull(AlignmentType.NEUTRAL);
         Assert.assertNotNull(AlignmentType.EVIL);
+    }
+
+    @Test
+    public void characterShouldHaveADefaultArmorRatingOf10() {
+        CharacterEntity character = new CharacterEntity();
+        Assert.assertEquals(10, character.getArmorRating());
     }
 
 }

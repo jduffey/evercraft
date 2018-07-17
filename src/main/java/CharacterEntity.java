@@ -18,4 +18,8 @@ public class CharacterEntity {
     public AlignmentType getAlignment() {
         return alignmentType;
     }
+
+    public int getArmorRating() {
+        return 10;
+    }
 }
