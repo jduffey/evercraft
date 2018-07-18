@@ -1,5 +1,11 @@
 public class CharacterEntity {
 
+    private final int strengthRating = 10;
+    private final int dexterityRating = 10;
+    private final int constitutionRating = 10;
+    private final int wisdomRating = 10;
+    private final int intelligenceRating = 10;
+    private final int charismaRating = 10;
     private String name;
     private AlignmentType alignmentType;
     private int armorRating = 10;
@@ -76,26 +82,26 @@ public class CharacterEntity {
     }
 
     public int getStrength() {
-        return 10;
+        return strengthRating;
     }
 
     public int getDexterity() {
-        return 10;
+        return dexterityRating;
     }
 
     public int getConstitution() {
-        return 10;
+        return constitutionRating;
     }
 
     public int getWisdom() {
-        return 10;
+        return wisdomRating;
     }
 
     public int getIntelligence() {
-        return 10;
+        return intelligenceRating;
     }
 
     public int getCharisma() {
-        return 10;
+        return charismaRating;
     }
 }
