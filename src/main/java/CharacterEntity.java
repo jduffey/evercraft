@@ -1,18 +1,19 @@
 public class CharacterEntity {
 
-    private final int strengthRating = 10;
-    private final int dexterityRating = 10;
-    private final int constitutionRating = 10;
-    private final int wisdomRating = 10;
-    private final int intelligenceRating = 10;
-    private final int charismaRating = 10;
     private String name;
     private AlignmentType alignmentType;
+    private int strengthRating = 10;
+    private int dexterityRating = 10;
+    private int constitutionRating = 10;
+    private int wisdomRating = 10;
+    private int intelligenceRating = 10;
+    private int charismaRating = 10;
     private int armorRating = 10;
     private int hitPoints = 5;
+    private LifeStatus lifeStatus = LifeStatus.ALIVE;
+
     private int mostRecentRoll;
     private boolean mostRecentAttackSuccess;
-    private LifeStatus lifeStatus = LifeStatus.ALIVE;
 
     public void setName(String name) {
         this.name = name;
